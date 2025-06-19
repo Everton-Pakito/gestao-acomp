@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestão de Acompanhamento</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="padrao_css_sistema.css"> <!-- Aqui está o link para o seu CSS -->
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
@@ -19,6 +18,7 @@
                 <h2>Preencha os Dados</h2>
                 <form id="form">
                     <div class="form-group">
+                        <!-- Campo 1: Operação -->
                         <div class="input-group">
                             <label for="operacao">Operação</label>
                             <select id="operacao">
@@ -29,17 +29,23 @@
                                 <option value="Gasa">Gasa</option>
                             </select>
                         </div>
+
+                        <!-- Campo 2: Motorista -->
                         <div class="input-group">
                             <label for="motorista">Motorista</label>
                             <input type="text" id="motorista" list="motoristas">
                             <datalist id="motoristas">
-                                <!-- Adiciona os motoristas via JS -->
+                                <!-- Os motoristas serão carregados via JS -->
                             </datalist>
                         </div>
+
+                        <!-- Campo 3: Frota -->
                         <div class="input-group">
                             <label for="frota">Frota</label>
                             <input type="number" id="frota">
                         </div>
+
+                        <!-- Campo 4: Configuração -->
                         <div class="input-group">
                             <label for="configuracao">Configuração</label>
                             <select id="configuracao">
@@ -47,6 +53,8 @@
                                 <option value="Tremiado">Tremiado</option>
                             </select>
                         </div>
+
+                        <!-- Campo 5: Marca/Modelo -->
                         <div class="input-group">
                             <label for="marcaModelo">Marca/Modelo</label>
                             <select id="marcaModelo">
@@ -56,34 +64,50 @@
                                 <option value="VW 33460">VW 33460</option>
                             </select>
                         </div>
+
+                        <!-- Campo 6: Odômetro Inicial -->
                         <div class="input-group">
                             <label for="odometroInicial">Odômetro Inicial</label>
-                            <input type="number" id="odometroInicial">
+                            <input type="number" id="odometroInicial" step="0.1" min="0" placeholder="0,0">
                         </div>
+
+                        <!-- Campo 7: Despacho -->
                         <div class="input-group">
                             <label for="despacho">Despacho</label>
                             <input type="number" id="despacho">
                         </div>
+
+                        <!-- Campo 8: Balança Saída -->
                         <div class="input-group">
                             <label for="balancaSaida">Balança Saída</label>
                             <button type="button" id="balancaSaida" onclick="setDate('balancaSaida')">Registrar Data e Hora</button>
                         </div>
+
+                        <!-- Campo 9: Chegada Batedor -->
                         <div class="input-group">
                             <label for="chegadaBatedor">Chegada Batedor</label>
                             <button type="button" id="chegadaBatedor" onclick="setDate('chegadaBatedor')">Registrar Data e Hora</button>
                         </div>
+
+                        <!-- Campo 10: Saída Batedor -->
                         <div class="input-group">
                             <label for="saidaBatedor">Saída Batedor</label>
                             <button type="button" id="saidaBatedor" onclick="setDate('saidaBatedor')">Registrar Data e Hora</button>
                         </div>
+
+                        <!-- Campo 11: Balança Entrada -->
                         <div class="input-group">
                             <label for="balancaEntrada">Balança Entrada</label>
                             <button type="button" id="balancaEntrada" onclick="setDate('balancaEntrada')">Registrar Data e Hora</button>
                         </div>
+
+                        <!-- Campo 12: Média Atingida -->
                         <div class="input-group">
                             <label for="mediaAtingida">Média Atingida</label>
-                            <input type="number" id="mediaAtingida">
+                            <input type="number" id="mediaAtingida" step="0.1" min="0" placeholder="0,0">
                         </div>
+
+                        <!-- Campo 13: Tipo Carregamento -->
                         <div class="input-group">
                             <label for="tipoCarregamento">Tipo Carregamento</label>
                             <select id="tipoCarregamento">
@@ -91,6 +115,8 @@
                                 <option value="Troca Conjunto">Troca Conjunto</option>
                             </select>
                         </div>
+
+                        <!-- Campo 14: Viagem -->
                         <div class="input-group">
                             <label for="viagem">Viagem</label>
                             <select id="viagem">
@@ -98,6 +124,13 @@
                                 <option value="Parcial">Viagem Parcial</option>
                             </select>
                         </div>
+
+                        <!-- Campo 15: Odômetro Final -->
+                        <div class="input-group">
+                            <label for="odometroFinal">Odômetro Final</label>
+                            <input type="number" id="odometroFinal" step="0.1" min="0" placeholder="0,0">
+                        </div>
+
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar Dados</button>
                 </form>
@@ -110,4 +143,3 @@
     <script src="app.js"></script>
 </body>
 </html>
-    
