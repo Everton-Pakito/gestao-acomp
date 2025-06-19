@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Acompanhamento</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Gestão de Acompanhamento</h1>
+            <p>Formulário de Acompanhamento de Operações</p>
+        </header>
+        <div class="content">
+            <div class="section">
+                <h2>Preencha os Dados</h2>
+                <form id="form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <label for="operacao">Operação</label>
+                            <select id="operacao">
+                                <option value="DAMATA">DAMATA</option>
+                                <option value="Rio Vermelho">Rio Vermelho</option>
+                                <option value="Unialcoo">Unialcoo</option>
+                                <option value="Mundial">Mundial</option>
+                                <option value="Gasa">Gasa</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="motorista">Motorista</label>
+                            <input type="text" id="motorista" list="motoristas">
+                            <datalist id="motoristas">
+                                <!-- Adiciona os motoristas via JS -->
+                            </datalist>
+                        </div>
+                        <div class="input-group">
+                            <label for="frota">Frota</label>
+                            <input type="number" id="frota">
+                        </div>
+                        <div class="input-group">
+                            <label for="configuracao">Configuração</label>
+                            <select id="configuracao">
+                                <option value="Bemiado">Bemiado</option>
+                                <option value="Tremiado">Tremiado</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="marcaModelo">Marca/Modelo</label>
+                            <select id="marcaModelo">
+                                <option value="Volvo FH 540">Volvo FH 540</option>
+                                <option value="Scania XT 560G">Scania XT 560G</option>
+                                <option value="MB 3344">MB 3344</option>
+                                <option value="VW 33460">VW 33460</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="odometroInicial">Odômetro Inicial</label>
+                            <input type="number" id="odometroInicial">
+                        </div>
+                        <div class="input-group">
+                            <label for="despacho">Despacho</label>
+                            <input type="number" id="despacho">
+                        </div>
+                        <div class="input-group">
+                            <label for="balancaSaida">Balança Saída</label>
+                            <button type="button" id="balancaSaida" onclick="setDate('balancaSaida')">Registrar Data e Hora</button>
+                        </div>
+                        <div class="input-group">
+                            <label for="chegadaBatedor">Chegada Batedor</label>
+                            <button type="button" id="chegadaBatedor" onclick="setDate('chegadaBatedor')">Registrar Data e Hora</button>
+                        </div>
+                        <div class="input-group">
+                            <label for="saidaBatedor">Saída Batedor</label>
+                            <button type="button" id="saidaBatedor" onclick="setDate('saidaBatedor')">Registrar Data e Hora</button>
+                        </div>
+                        <div class="input-group">
+                            <label for="balancaEntrada">Balança Entrada</label>
+                            <button type="button" id="balancaEntrada" onclick="setDate('balancaEntrada')">Registrar Data e Hora</button>
+                        </div>
+                        <div class="input-group">
+                            <label for="mediaAtingida">Média Atingida</label>
+                            <input type="number" id="mediaAtingida">
+                        </div>
+                        <div class="input-group">
+                            <label for="tipoCarregamento">Tipo Carregamento</label>
+                            <select id="tipoCarregamento">
+                                <option value="Sobre Rodas">Sobre Rodas</option>
+                                <option value="Troca Conjunto">Troca Conjunto</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="viagem">Viagem</label>
+                            <select id="viagem">
+                                <option value="Completa">Viagem Completa</option>
+                                <option value="Parcial">Viagem Parcial</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Dados</button>
+                </form>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>Feito com ❤️ por Everton Tezzon Ferreira</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+    
