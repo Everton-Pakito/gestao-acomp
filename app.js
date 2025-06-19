@@ -1,3 +1,36 @@
+// Função para carregar motoristas do arquivo JSON e preencher o datalist
+function loadMotoristas() {
+    fetch('motoristas.json')
+        .then(response => response.json())
+        .then(motoristas => {
+            const motoristaInput = document.getElementById('motoristas');
+            motoristas.forEach(motorista => {
+                let option = document.createElement('option');
+                option.value = motorista;
+                motoristaInput.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Erro ao carregar motoristas:', error));
+}
+
+// Carregar motoristas quando a página for carregada
+window.onload = loadMotoristas;
+
+// Função para registrar data e hora
+function setDate(buttonId) {
+    const currentDate = new Date().toLocaleString();  // Captura a data e hora atual
+    document.getElementById(buttonId).dataset.time = currentDate;  // Armazena a data no botão
+    document.getElementById(buttonId).innerText = `Registrado: ${currentDate}`;  // Atualiza o texto do botão
+    document.getElementById(buttonId).disabled = true;  // Desabilita o botão após o clique
+}
+
+// Adicionando o evento para os botões de data
+document.getElementById('balancaSaida').addEventListener('click', function() { setDate('balancaSaida'); });
+document.getElementById('chegadaBatedor').addEventListener('click', function() { setDate('chegadaBatedor'); });
+document.getElementById('saidaBatedor').addEventListener('click', function() { setDate('saidaBatedor'); });
+document.getElementById('balancaEntrada').addEventListener('click', function() { setDate('balancaEntrada'); });
+
+// Coletando e enviando os dados do formulário para o Google Sheets
 document.getElementById('form').addEventListener('submit', function(event) {
     event.preventDefault();
 
