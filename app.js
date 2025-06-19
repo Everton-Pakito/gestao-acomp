@@ -53,6 +53,12 @@ document.getElementById('form').addEventListener('submit', function(event) {
         odometroFinal: document.getElementById('odometroFinal').value // Novo campo Odômetro Final
     };
 
+    // Verificando se o formData não está vazio
+    if (!formData.operacao || !formData.motorista || !formData.frota) {
+        alert("Por favor, preencha todos os campos obrigatórios.");
+        return;
+    }
+
     // Verifique o objeto formData no console para garantir que todos os campos estão presentes
     console.log(formData);
 
