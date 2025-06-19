@@ -1,5 +1,5 @@
 function sendFormData(formData) {
-    const sheet = SpreadsheetApp.openById('SUA_PLANILHA_ID').getSheetByName('Formularios');
+    const sheet = SpreadsheetApp.openById('1-xWaoRNvlO7W0dU1apcqBATCio4wzFrrE0VhE5b3fpg').getSheetByName('Formularios');
     
     // Garantir que o cabeçalho existe (caso contrário, adiciona)
     const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
