@@ -53,6 +53,9 @@ document.getElementById('form').addEventListener('submit', function(event) {
         odometroFinal: document.getElementById('odometroFinal').value // Novo campo Odômetro Final
     };
 
+    // Verifique o objeto formData no console para garantir que todos os campos estão presentes
+    console.log(formData);
+
     // Enviar dados ao Google Sheets via Google Apps Script
     if (navigator.onLine) {
         google.script.run.sendFormData(formData, 'Formularios');
